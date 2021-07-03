@@ -1,34 +1,38 @@
-version: '3'
+version: "3"
 services:
-    client:
-        image: client
-        stdin_open: true
-        ports:
-            - '3000:3000'
-        networks:
-            - url-shortner-app
-    server:
-        image: server
-        environment:
-            - NODE_ENV=production
-        stdin_open: true
-        ports:
-            - '5000:5000'
-        networks:
-            - url-shortner-app
-        depends_on:
-            - mongo
-    mongo:
-        image: mongo:3.6.19-xenial
-        ports:
-            - '27017:27017'
-        networks:
-            - url-shortner-app
-        volumes:
-            - mongo-data:/data/db
+  client:
+    image: client
+    environment:
+      - NODE_ENV=production
+    stdin_open: true
+    ports:
+      - "3000:3000"
+    networks:
+      - url-shortner-app
+  server:
+    image: server
+    environment:
+      - NODE_ENV=production
+      - BASE_URL=http://34.237.90.98
+      - MONGODB_URI=mongodb://mongo:27017/url_shortner?retryWrites=true&w=majority
+    stdin_open: true
+    ports:
+      - "5000:5000"
+    networks:
+      - url-shortner-app
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:3.6.19-xenial
+    ports:
+      - "27017:27017"
+    networks:
+      - url-shortner-app
+    volumes:
+      - mongo-data:/data/db
 networks:
-    url-shortner-app:
-        driver: bridge
+  url-shortner-app:
+    driver: bridge
 volumes:
-    mongo-data:
-        driver: local
+  mongo-data:
+    driver: local
