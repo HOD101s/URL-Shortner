@@ -1,0 +1,6 @@
+[submodule "URL-Shortner-client"]
+	path = URL-Shortner-client
+	url = git@github.com:HOD101s/URL-Shortner-client.git
+[submodule "URL-Shortner-server"]
+	path = URL-Shortner-server
+	url = git@github.com:HOD101s/URL-Shortner-server.git
