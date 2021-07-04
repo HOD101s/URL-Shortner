@@ -1,6 +1,7 @@
 version: "3.3"
 services:
   nginx:
+    image: nginx
     build:
       dockerfile: Dockerfile
       context: ./nginx
@@ -10,6 +11,7 @@ services:
       - ./nginx/configs/default.conf:/etc/nginx/conf.d/default.conf
 
   client:
+    image: hod101s/url-client
     container_name: client
     build:
       dockerfile: Dockerfile
@@ -18,13 +20,13 @@ services:
       - NODE_ENV=production
 
   backend:
+    image: hod101s/url-server
     container_name: backend
     build:
       dockerfile: Dockerfile
       context: ./URL-Shortner-server
     environment:
       - NODE_ENV=production
-      - BASE_URL=http://34.237.90.98
       - MONGODB_URI=mongodb://mongo:27017/url_shortner?retryWrites=true&w=majority
     depends_on:
       - mongo
