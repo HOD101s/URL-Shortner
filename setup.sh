@@ -12,4 +12,5 @@ sudo apt  install docker-compose -y
 cd URL-Shortner
 git submodule init
 git submodule update
+sudo docker-compose build
 sudo docker-compose up
