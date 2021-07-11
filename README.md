@@ -19,7 +19,11 @@ docker-compose up
 ```
 
 ### Linux
-Run setup shell script
+Run setup shell script using source
+
+```
+source URL-Shortner/setup.sh
+```
 
 ## Stack
 
