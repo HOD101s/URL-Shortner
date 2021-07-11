@@ -1,6 +1,6 @@
 version: "3.3"
 services:
-  nginx:
+  nginx_proxy:
     build:
       dockerfile: Dockerfile
       context: ./nginx
@@ -31,8 +31,6 @@ services:
   mongo:
     image: mongo:3.6.19-xenial
     container_name: mongo
-    ports:
-      - "27017:27017"
     volumes:
       - mongo-data:/data/db
 
