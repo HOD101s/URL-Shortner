@@ -18,7 +18,7 @@ docker-compose build
 docker-compose up
 ```
 
-### Linux
+### Ubuntu
 Run setup shell script using source
 
 ```
