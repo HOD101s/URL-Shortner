@@ -1,5 +1,5 @@
 # URL-Shortner
-URL Shortner web app with express node mongo and react
+URL Shortner web app with express node mongo react deployed in a Multi-docker-container setup with docker-compose.
 
 ## Architecture
 ![URL Shortner](https://user-images.githubusercontent.com/37273226/125207192-89402e80-e2a8-11eb-8397-d18ee271adc0.png)
@@ -27,11 +27,11 @@ source URL-Shortner/setup.sh
 
 ## Stack
 
-### Client
+### [Client](https://github.com/HOD101s/URL-Shortner-client)
 - React
 - axios
 
-### Server
+### [Server](https://github.com/HOD101s/URL-Shortner-server)
 - nodejs
 - express
-- mongoose (mongo)
+- mongodb (mongoose odm)
